@@ -11,7 +11,7 @@ jobs:
   build:
     name: Docker build kontroll
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Lae kood alla
         uses: actions/checkout@v4
 

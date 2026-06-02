@@ -34,11 +34,12 @@ Testide (nt Jest või Mocha) käivitamiseks kasuta järgmist käsku: node src/te
 
 ## API
 
-Meetod,   Endpoint,   Kirjeldus
-POST,   /register,   Uue kasutaja registreerimine süsteemi.
-GET,   /menu,   Tagastab saadaoleva toidumenüü.
-POST,   /orders,   Uue toidutellimuse esitamine.
-GET,   /orders/:id,   Konkreetse tellimuse staatuse ja detailide pärimine.
+| Meetod | Endpoint        | Kirjeldus |
+|--------|----------------|----------|
+| POST   | /register      | Uue kasutaja registreerimine süsteemi |
+| GET    | /menu          | Tagastab saadaoleva toidumenüü |
+| POST   | /orders        | Uue toidutellimuse esitamine |
+| GET    | /orders/:id    | Konkreetse tellimuse staatuse ja detailide pärimine |
 
 ## GitHub Actions
 

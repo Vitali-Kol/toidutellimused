@@ -10,6 +10,21 @@ on:
       - master
 
 jobs:
+  build:
+      name: docker build kontroll
+      runs-on: ubuntu-latest
+      steps:
+        - name: lae kood alla
+          uses: actions/checkout@v4
+        
+        - name: ehite dev image
+          run: docker compose --profile dev build
+
+        - name: ehita prod image
+          run: docker compose --profile prod build
+
+        - name: ehita test image
+          run: docker compose --profile test build
   kodi-kontroll:
     runs-on: ubuntu-latest
 

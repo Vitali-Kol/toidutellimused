@@ -10,7 +10,9 @@ const data = require("../data");
 // GET /api/menu/categories   - kõik kategooriad
 // ============================================
 
-
+router.get("/", (req, res) => {
+  res.json({ menu: data.menu });
+});
 
 // Kõik kategooriad - peab olema ENNE /:id
 router.get("/categories", (req, res) => {

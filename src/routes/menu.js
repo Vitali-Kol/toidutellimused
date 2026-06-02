@@ -21,8 +21,8 @@ router.get("/categories", (req, res) => {
 });
 
 // Kategooria järgi - peab olema ENNE /:id
-router.get("/categoy/:cat", (req, res) => {
-  const cat = req.params.cat.toLowerCase();
+router.get("/category/:cat", (req, res) => {
+  
   const items = data.menu.filter((item) => item.category === cat);
 
   if (items.length === 0) {

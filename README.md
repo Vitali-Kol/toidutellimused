@@ -32,14 +32,30 @@ Käivitab serveri tootekeskkonna režiimis (ilma automaatse taaskäivitamiseta):
 
 Testide (nt Jest või Mocha) käivitamiseks kasuta järgmist käsku: node src/test.js
 
+
+
 ## API
 
-| Meetod | Endpoint        | Kirjeldus |
-|--------|----------------|----------|
-| POST   | /register      | Uue kasutaja registreerimine süsteemi |
-| GET    | /menu          | Tagastab saadaoleva toidumenüü |
-| POST   | /orders        | Uue toidutellimuse esitamine |
-| GET    | /orders/:id    | Konkreetse tellimuse staatuse ja detailide pärimine |
+### Health check
+| Meetod | Endpoint | Kirjeldus |
+|--------|----------|----------|
+| GET    | /health  | Serveri staatuse kontroll |
+
+### Kasutajad
+| Meetod | Endpoint            | Kirjeldus |
+|--------|---------------------|----------|
+| POST   | /api/users/signup   | Uue kasutaja registreerimine |
+| POST   | /api/users/login    | Sisselogimine |
+
+### Menüü
+| Meetod | Endpoint   | Kirjeldus |
+|--------|------------|----------|
+| GET    | /api/menu  | Toidumenüü vaatamine |
+
+### Tellimused
+| Meetod | Endpoint     | Kirjeldus |
+|--------|--------------|----------|
+| POST   | /api/orders  | Tellimuse loomine |
 
 ## GitHub Actions
 

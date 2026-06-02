@@ -5,6 +5,10 @@ const path = require("path");
 const usersRouter = require("./routes/users");
 const menuRouter = require("./routes/menu");
 const ordersRouter = require("./routes/orders");
+
+// 1. PARANDUS: Impordi andmed, et "data" muutuja oleks kättesaadav
+// (Asenda õige teekonnaga, näiteks mock-andmete failiga)
+const data = require("./data.json"); 
  
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,12 +40,13 @@ app.get("/health", (req, res) => {
   });
 });
  
+// 2. PARANDUS: Parandatud trükivead (users ja env)
 app.get("/api/stats", (req, res) => {
   res.json({
     totalOrders: data.orders.length,
-    totalUsers: data.ussers.length,
+    totalUsers: data.users.length, // Parandatud: ussers -> users
     totalMenuItems: data.menu.length,
-    end: ENV
+    env: ENV // Parandatud: end -> env
   });
 });
  

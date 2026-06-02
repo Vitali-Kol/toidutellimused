@@ -10,6 +10,25 @@ on:
       - master
 
 jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: [test, build, kodi-kontroll]
+    if: github.ref == 'refs/head/master'
+    steps:
+      - name: lae kood alla
+        uses: actions/checkout@v4
+
+      - name: teata edukast deployst
+        run: |
+          echo "koik testid labisid"
+          echo "rakendus on valmis"
+          echo "keskkond: production"
+          echo "commit: ${{ github.sha }}"
+
+
+
+
   build:
       name: docker build kontroll
       runs-on: ubuntu-latest

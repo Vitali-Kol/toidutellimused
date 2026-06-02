@@ -30,7 +30,7 @@ Käivitab serveri tootekeskkonna režiimis (ilma automaatse taaskäivitamiseta):
 
 ## Testid
 
-Testide (nt Jest või Mocha) käivitamiseks kasuta järgmist käsku: node src/test.js
+Testide käivitamiseks kasuta järgmist käsku: node src/test.js
 
 
 

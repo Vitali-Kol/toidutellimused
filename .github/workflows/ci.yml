@@ -20,23 +20,23 @@ jobs:
 
       - name: Ehita prod image
         run: docker compose --profile prod build
-        
-  name: Koodi kontroll
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Lae kood alla
-      uses: actions/checkout@v4
-    
-    - name: Paigalda Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-    
-    - name: Paigalda sõltuvused
-      run: npm install
+  lint:      
+    name: Koodi kontroll
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Lae kood alla
+        uses: actions/checkout@v4
+      
+      - name: Paigalda Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Paigalda sõltuvused
+        run: npm install
 
-    - name: Kontrolli üntaksi vigu
-      run: node --check src/server.js src/routes/users.js src/routes/menu.js src/routes/orders.js
+      - name: Kontrolli üntaksi vigu
+        run: node --check src/server.js src/routes/users.js src/routes/menu.js src/routes/orders.js
 
   test:
     name: Automaattestid
